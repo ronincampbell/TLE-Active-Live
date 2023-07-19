@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Interactible
+  - NonPersistent
+  - Barrier
+  - Projectile
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Enemy
+  - Player
+  - InspectObject
+  - PostProcessing
+  - Background
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3784675031
+    locked: 0
+  - name: WallBlades
+    uniqueID: 3975244315
+    locked: 0
+  - name: MidGround
+    uniqueID: 1140694443
+    locked: 0
+  - name: UI
+    uniqueID: 3058774781
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
