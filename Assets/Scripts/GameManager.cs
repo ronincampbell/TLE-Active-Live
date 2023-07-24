@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     private SawScript sawScript;
     private RewindFunction rewindFunc;
     private EnemyScript enemyScript;
+    private EnemyPlayerInteraction enemyDroidScript;
     private OrbTurret turretScript;
     private LaserTurretScript laserTurretScript;
     
@@ -220,9 +221,13 @@ public class GameManager : MonoBehaviour
             foreach (GameObject obj in nonPersistentObjects)
             {
                 enemyScript = obj.GetComponent<EnemyScript>();
+                enemyDroidScript = obj.GetComponent<EnemyPlayerInteraction>();
                 if (enemyScript != null)
                 {
                     enemyScript.enemyCanMove = true;
+                } else if (enemyDroidScript != null)
+                {
+                    enemyDroidScript.forceReset();
                 }
             }
         }
@@ -252,6 +257,7 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject obj in nonPersistentObjects)
         {
+            enemyDroidScript = obj.GetComponent<EnemyPlayerInteraction>();
             enemyScript = obj.GetComponent<EnemyScript>();
             turretScript = obj.GetComponent<OrbTurret>();
             if (enemyScript != null)
@@ -262,6 +268,9 @@ public class GameManager : MonoBehaviour
             } else if (turretScript != null)
             {
                 turretScript.TurretReset();
+            } else if (enemyDroidScript != null)
+            {
+                enemyDroidScript.forceReset();
             }
         }
     }

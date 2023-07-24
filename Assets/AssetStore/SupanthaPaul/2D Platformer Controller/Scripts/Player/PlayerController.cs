@@ -336,13 +336,20 @@ namespace SupanthaPaul
 				}
 				
 				EnemyScript enemyScript = enemy.GetComponent<EnemyScript>();
-				if (enemyScript == null) 
+				EnemyPlayerInteraction enemyDroidAI = enemy.GetComponent<EnemyPlayerInteraction>();
+				if (enemyScript != null) 
+				{
+					enemyScript.ResetEnemyPosition();
+					Debug.LogWarning("Enemy component not found on an enemy object.");
+				} else if (enemyDroidAI != null) 
+				{
+					enemyDroidAI.ResetDroid();
+				} else 
 				{
 					Debug.LogWarning("Enemy component not found on an enemy object.");
-					continue;
 				}
 
-				enemyScript.ResetEnemyPosition();
+				
 			}
 
 		}
