@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Game Objects")]
     public GameObject pauseMenu;
+    public GameObject GameAudio;
     public TextMeshProUGUI countdownText; 
     public TextMeshProUGUI loopNumText;
     public GameObject spawn;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     private int loopNum = 0;
     public bool enemiesArePresent;
     private bool pauseCooldownActive = false;
+    public Color OGColor;
     [HideInInspector] public bool playerIsDead = false;
 
     private Coroutine countdownCoroutine;
@@ -122,7 +124,12 @@ public class GameManager : MonoBehaviour
 
             yield return null; 
 
-            countdownTime -= Time.deltaTime; 
+            countdownTime -= Time.deltaTime;
+
+            if (countdownTime <= inputTime/3)
+            {
+                countdownText.color = Color.red;
+            }
         }
         countdownText.text = "00:000";
         if (!playerIsDead){
@@ -171,6 +178,7 @@ public class GameManager : MonoBehaviour
         if (!pauseCooldownActive)
         {
             StartCoroutine(PauseCooldown());
+            GameAudio.GetComponent<AudioLowPassFilter>().enabled = true;
             loopNum++;
             pauseMenu.SetActive(true);
             isPaused = true;
@@ -181,6 +189,7 @@ public class GameManager : MonoBehaviour
     }
     private void Unpause()
     {
+        countdownText.color = OGColor;
         playerSprite.GetComponent<Animator>().SetBool("IsDead", false);
         Time.timeScale = 1f;
         isPaused = false;
@@ -207,7 +216,7 @@ public class GameManager : MonoBehaviour
     public void respawnPlayer()
     {
         //Debug.Log("Player has been respawned");
-
+        GameAudio.GetComponent<AudioLowPassFilter>().enabled = false;
         StartCoroutine(InvicibilityTimer());
         player.transform.position = spawn.transform.position;
         //player.GetComponent<PlayerController>().isCurrentlyPlayable = true;
@@ -301,5 +310,4 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         pauseCooldownActive = false;
     }
-
 }
