@@ -23,13 +23,13 @@ public class SawScript : MonoBehaviour
             //Debug.Log("Saw is active");
             this.GetComponent<Animator>().SetTrigger("activateSaw");
             this.GetComponent<Animator>().ResetTrigger("deactivateSaw");
-            this.GetComponent<BoxCollider2D>().enabled = true;
+            this.GetComponent<CircleCollider2D>().enabled = true;
             sawAlreadyActive = true;
         } else if (!sawActive) {
             //Debug.Log("Saw is inactive");
             this.GetComponent<Animator>().SetTrigger("deactivateSaw");
             this.GetComponent<Animator>().ResetTrigger("activateSaw");
-            this.GetComponent<BoxCollider2D>().enabled = false;
+            this.GetComponent<CircleCollider2D>().enabled = false;
             sawAlreadyActive = false;   
         }
     }

@@ -29,6 +29,7 @@ public class OrbProjectile : MonoBehaviour
         {
             //Debug.Log("Barrier hit!");
             canMove = false;
+            //this.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             this.gameObject.GetComponent<Animator>().SetTrigger("Detonate");
         }
         else if (other.gameObject.CompareTag("Player"))

@@ -14,6 +14,7 @@ public class ConsoleScript : MonoBehaviour
     private LaserTurretScript laserTurretScript;
 
     public List<GameObject> gameObjectsToDeactivate;
+    public GameObject persistantParticleSystem;
 
     [HideInInspector] public bool resetNow;
     private bool playerIsInTrigger;
@@ -31,6 +32,10 @@ public class ConsoleScript : MonoBehaviour
         CheckForReset();
         if (Input.GetKeyDown(KeyCode.E) && playerIsInTrigger)
         {
+            if (persistantParticleSystem != null)
+            {
+                persistantParticleSystem.SetActive(false);
+            }
             foreach(GameObject obj in gameObjectsToDeactivate)
             {
                 spikesScript = obj.GetComponent<SpikesScript>();
