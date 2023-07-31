@@ -39,6 +39,7 @@ namespace TPEnemies
 
         void FixedUpdate()
         {
+            //Debug.Log("Enemy moving left: " + IsEnemyMovingLeft());
             CheckIfReachedTarget();
             bool isMovingLeft = IsEnemyMovingLeft();
             if (isFacingLeft != isMovingLeft) // only flip if direction has changed
@@ -73,7 +74,7 @@ namespace TPEnemies
             {
                 enemyHasNotReachedTarget = false;
                 enemyAnim.SetBool("reachedDestination", true);
-                FlipEnemySprite(!IsEnemyMovingLeft());
+                //FlipEnemySprite(!IsEnemyMovingLeft());
             }
         }
 
