@@ -69,7 +69,7 @@ public class RewindFunction : MonoBehaviour
         if (states.Count > 0)
         {
             float rewindSpeed = GameManager.GetComponent<GameManager>().inputTime - GameManager.GetComponent<GameManager>().countdownTime;
-            int rewindSpeedInt = Mathf.RoundToInt(rewindSpeed);
+            int rewindSpeedInt = Mathf.RoundToInt(rewindSpeed); 
 
             State state = states[0];
             transform.position = state.position;
