@@ -746,6 +746,7 @@ MonoBehaviour:
   player: {fileID: 1865938916059906617}
   gameCam: {fileID: 519420028}
   playerSprite: {fileID: 1865938915041599787}
+  rewindSfx: {fileID: 8300000, guid: 39a894709d7db43e899a5bcb1ab788ed, type: 3}
   rewindSprite: {fileID: 1056593488, guid: f48e81b5e7bae054a97abeaa0eb13e19, type: 3}
   inputTime: 15
   countdownTime: 0

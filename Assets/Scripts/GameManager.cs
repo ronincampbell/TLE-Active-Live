@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject gameCam;
     public GameObject playerSprite;
+    public AudioClip rewindSfx;
     private GameObject[] nonPersistentObjects;
     private GameObject playerCharacter;
     public Sprite rewindSprite;
@@ -255,6 +256,7 @@ public class GameManager : MonoBehaviour
     // Rewinds the player, called when the player unpauses
     private void rewindPlayer()
     {
+        AudioSource.PlayClipAtPoint(rewindSfx, player.transform.position, 0.75f);
         playerSprite.GetComponent<Animator>().enabled = false;
         playerSprite.GetComponent<SpriteRenderer>().sprite = rewindSprite; // To be replaced with animation at some point
         

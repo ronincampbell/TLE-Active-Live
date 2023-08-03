@@ -454,7 +454,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1661034599}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &460506637
 MonoBehaviour:
@@ -469,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManager: {fileID: 188086466544447330}
+  bladesActive: 1
 --- !u!95 &460506638
 Animator:
   serializedVersion: 5
@@ -738,6 +739,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12862f69865993746a87ee34ddec17a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &613962361 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3415101947237307245, guid: 467dfdf2e656bce46967e7006d97df3a,
+    type: 3}
+  m_PrefabInstance: {fileID: 656180281082300520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &749891838 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6754501591461734093, guid: 9f1c73a9aff00f840a3d0555d2755949,
@@ -858,12 +865,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &847845894 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 656180280235643502, guid: 467dfdf2e656bce46967e7006d97df3a,
-    type: 3}
-  m_PrefabInstance: {fileID: 656180281082300520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &857172396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,23 +1149,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891354764}
   m_CullTransparentMesh: 1
+--- !u!4 &907546439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 548954390806656128, guid: 57e38deb80de10743a5b53ff73391ccb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6507159072728856500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1029238877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4934002603566444338, guid: 5e94a9c188e1df84d8ae6b58d6b88fc1,
     type: 3}
   m_PrefabInstance: {fileID: 2300796205733926548}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1261211341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6507159071770687865, guid: 57e38deb80de10743a5b53ff73391ccb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6507159072728856500}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1261211345 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6507159071770687845, guid: 57e38deb80de10743a5b53ff73391ccb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6507159072728856500}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316322792 stripped
 GameObject:
@@ -2710,12 +2705,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 847845894}
+  - {fileID: 613962361}
   - {fileID: 548935810}
   - {fileID: 1731524781}
   - {fileID: 280348584}
-  - {fileID: 1261211345}
   - {fileID: 460506636}
+  - {fileID: 907546439}
   - {fileID: 1499779623}
   - {fileID: 883478552}
   - {fileID: 1029238877}
@@ -4827,7 +4822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameObjectsToDeactivate.Array.data[2]
       value: 
-      objectReference: {fileID: 1261211341}
+      objectReference: {fileID: 0}
     - target: {fileID: 656180280235643503, guid: 467dfdf2e656bce46967e7006d97df3a,
         type: 3}
       propertyPath: gameObjectsToDeactivate.Array.data[3]
