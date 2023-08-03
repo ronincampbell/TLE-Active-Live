@@ -5,6 +5,7 @@ using UnityEngine;
 public class WallBladesScript : MonoBehaviour
 {
     public GameObject GameManager;
+    public bool bladesActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,9 @@ public class WallBladesScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!bladesActive){
+            this.GetComponent<Animator>().SetBool("bladesActive", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -11,6 +11,7 @@ public class ConsoleScript : MonoBehaviour
     private LaserBeamScript laserScript;
     private SawScript sawScript;
     private OrbTurret turretScript;
+    private WallBladesScript wallBladesScript;
     private LaserTurretScript laserTurretScript;
 
     public List<GameObject> gameObjectsToDeactivate;
@@ -42,6 +43,7 @@ public class ConsoleScript : MonoBehaviour
                 doorScript = obj.GetComponent<DoorScript>();
                 sawScript = obj.GetComponent<SawScript>();
                 turretScript = obj.GetComponent<OrbTurret>();
+                wallBladesScript = obj.GetComponent<WallBladesScript>();
                 laserScript = obj.GetComponent<LaserBeamScript>();
                 laserTurretScript = obj.GetComponent<LaserTurretScript>();
 
@@ -64,6 +66,9 @@ public class ConsoleScript : MonoBehaviour
                 } else if (laserTurretScript != null)
                 {
                     laserTurretScript.isActive = false;
+                } else if (wallBladesScript != null)
+                {
+                    wallBladesScript.bladesActive = false;
                 }
             }
             this.GetComponent<Animator>().SetBool("isOpen", true);
