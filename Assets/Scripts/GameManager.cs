@@ -109,6 +109,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) && isPaused)
         {
             Unpause();
+        } else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
