@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     private bool isPaused;
     private bool needToCheck = false;
     private bool invicible = false;
-    private int loopNum = 0;
+    public int loopNum = 1;
     public bool enemiesArePresent;
     private bool pauseCooldownActive = false;
     public Color OGColor;

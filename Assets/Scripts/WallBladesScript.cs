@@ -21,13 +21,14 @@ public class WallBladesScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && bladesActive)
         {
             //Debug.Log("Player hit wall blades");
             GameManager.GetComponent<GameManager>().killPlayer();
         }
     }
 
+    // What the fuck is this code? I don't know why this is needed but animation breaks if it's removed. I think i was drunk when i wrote this.
     public void BladesActive(){
         this.GetComponent<BoxCollider2D>().enabled = true;
     }
